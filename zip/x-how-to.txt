@@ -1,0 +1,17 @@
+
+javac Zipper.java
+
+java  Zipper a test1.zip foo
+java  Zipper e test1.zip
+
+javac -cp .:commons-compress-1.20.jar ZipperCC.java
+
+java -cp .:commons-compress-1.20.jar ZipperCC a test2.zip foo
+java -cp .:commons-compress-1.20.jar ZipperCC e test2.zip
+
+
+
+javac MkDir.java
+
+java  MkDir m foo
+java  MkDir r foo

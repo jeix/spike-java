@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.simplenet</groupId>
+	<artifactId>jsontest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.20</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<configuration>
+					<mainClass>ZipperCC</mainClass>
+					<arguments>
+						<argument>e</argument>
+						<argument>test2.zip</argument>
+					</arguments>
+					<!-- $ java  Zipper a test1.zip foo
+					<mainClass>Zipper</mainClass>
+					<arguments>
+						<argument>a</argument>
+						<argument>test1.zip</argument>
+						<argument>foo</argument>
+					</arguments>
+					-->
+					<!-- $ java  Zipper e test1.zip
+					<mainClass>Zipper</mainClass>
+					<arguments>
+						<argument>e</argument>
+						<argument>test1.zip</argument>
+					</arguments>
+					-->
+					<!-- $ java -cp .:commons-compress-1.20.jar ZipperCC a test2.zip foo
+					<mainClass>ZipperCC</mainClass>
+					<arguments>
+						<argument>a</argument>
+						<argument>test2.zip</argument>
+						<argument>foo</argument>
+					</arguments>
+					-->
+					<!-- $ java -cp .:commons-compress-1.20.jar ZipperCC e test2.zip
+					<mainClass>ZipperCC</mainClass>
+					<arguments>
+						<argument>e</argument>
+						<argument>test2.zip</argument>
+					</arguments>
+					-->
+					<!-- $ java  MkDir m foo
+					<mainClass>MkDir</mainClass>
+					<arguments>
+						<argument>m</argument>
+						<argument>foo</argument>
+					</arguments>
+					-->
+					<!-- $ java  MkDir r foo
+					<mainClass>MkDir</mainClass>
+					<arguments>
+						<argument>r</argument>
+						<argument>foo</argument>
+					</arguments>
+					-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

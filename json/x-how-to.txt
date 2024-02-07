@@ -1,0 +1,58 @@
+
+################################################################################
+
+$ mvn compile
+
+########################################
+# with org.codehaus.mojo/exec-maven-plugin
+
+$ mvn exec:java
+...
+{"stocks":[{"code":"42","name":"apple","cnt":100},{"code":"43","name":"banana","cnt":80},{"code":"44","name":"orange","cnt":40}]}
+{"x":"foo","y":"bar"}
+[{"code":"42","name":"apple","cnt":100},{"code":"43","name":"banana","cnt":80},{"code":"44","name":"orange","cnt":40}]
+...
+
+################################################################################
+# without org.codehaus.mojo/exec-maven-plugin
+
+mvn exec:java -Dexec.mainClass="com.example.Main" [-Dexec.args="foo"] ...
+
+################################################################################
+
+$ mvn exec:java -Dexec.mainClass="org.simple.jsontest.Try"
+...
+{"stocks":[{"code":"42","name":"apple","cnt":100},{"code":"43","name":"banana","cnt":80},{"code":"44","name":"orange","cnt":40}]}
+{"x":"foo","y":"bar"}
+[{"code":"42","name":"apple","cnt":100},{"code":"43","name":"banana","cnt":80},{"code":"44","name":"orange","cnt":40}]
+...
+
+$ mvn exec:java -Dexec.mainClass="org.simple.jsontest.Try2"
+...
+{"kind":"Structured","meta":{"tableName":"tb_foo"}}
+Unable to invoke no-args constructor for interface org.simple.jsontest.Meta. Registering an InstanceCreator with Gson for this type may fix this problem.
+{"kind":"Structured","meta":{"CLASSNAME":"org.simple.jsontest.StructuredMeta","DATA":{"tableName":"tb_foo"}}}
+Structured::tb_foo
+{"kind":"Structured","meta":{"CLASSNAME":"org.simple.jsontest.StructuredMeta","DATA":{"tableName":"tb_foo","items":[{"columnName":"foo_id"},{"columnName":"foo_name"}]}}}
+Structured::tb_foo::foo_id
+...
+
+################################################################################
+
+$ javac -cp gson-2.8.6.jar -d target/classes src/main/java/org/simple/jsontest/*.java
+
+$ java -cp target/classes:gson-2.8.6.jar org.simple.jsontest.Try
+{"stocks":[{"code":"42","name":"apple","cnt":100},{"code":"43","name":"banana","cnt":80},{"code":"44","name":"orange","cnt":40}]}
+{"x":"foo","y":"bar"}
+[{"code":"42","name":"apple","cnt":100},{"code":"43","name":"banana","cnt":80},{"code":"44","name":"orange","cnt":40}]
+
+$ java -cp target/classes:gson-2.8.6.jar org.simple.jsontest.Try2
+{"kind":"Structured","meta":{"tableName":"tb_foo"}}
+Unable to invoke no-args constructor for interface org.simple.jsontest.Meta. Registering an InstanceCreator with Gson for this type may fix this problem.
+{"kind":"Structured","meta":{"CLASSNAME":"org.simple.jsontest.StructuredMeta","DATA":{"tableName":"tb_foo"}}}
+Structured::tb_foo
+{"kind":"Structured","meta":{"CLASSNAME":"org.simple.jsontest.StructuredMeta","DATA":{"tableName":"tb_foo","items":[{"columnName":"foo_id"},{"columnName":"foo_name"}]}}}
+Structured::tb_foo::foo_id
+
+################################################################################
+:wq
