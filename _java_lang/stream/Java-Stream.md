@@ -326,15 +326,24 @@ List<Dish> dishes = menu.stream().collect(
 
 - `.map(mapper : Function<T,U>) : Optional<U>`
   - `.map(String::valueOf)`
-- `.flatMap(Function<T,R>)`
-
-- `.orElse(T) : T`
+- `.flatMap(mapper : Function<T,Optional<U>>) : Optional<U>`
 
 - `.isPresent() : boolean`
-- `.get() : T` or `NoSuchElementException`
+- `.isEmpty() : boolean`
 
 - `.ifPresent(action : Consumer<T>) : void`
-- `.ifPresentOrElse(Consumer<T>, Runnable)`
+- `.ifPresentOrElse(action : Consumer<T>, emptyAction : Runnable)`
+
+- `.get() : T` or `NoSuchElementException`
+- `.orElse(T) : T`
+- `.orElseGet(Supplier<T>) : T`
+
+- `.orElseThrow() : T`
+- `.orElseThrow(Supplier<Throwable>) : T` or `X extends Throwable`
+
+- `.or(Supplier<Optional<T>>) : Optional<T>`
+
+- `.stream() : Stream<T>`
 
 - `OptionalInt`
   - `.getAsInt() : int`
