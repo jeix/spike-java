@@ -107,6 +107,7 @@ List<String> lowCaloricDishesName =
 
 - `.count() : long`
 
+- `.max(Comparator<T>) : Optional<T>`
 - `.min(Comparator<T>) : Optional<T>`
   - `.min(comparing(Item::getX))`
 
