@@ -36,6 +36,9 @@ public class GroupingTest {
             if (maybeRdf.isPresent()) {
                 Rdf rdf = maybeRdf.get();
                 System.out.println(rdf.carId+"::"+rdf.driverId+"::"+rdf.begin);
+					//-> 2::201::12
+					//-> 1::101::11
+					//-> 1::102::13
             }
         }
 
@@ -49,6 +52,9 @@ public class GroupingTest {
             if (maybeRdf.isPresent()) {
                 Rdf rdf = maybeRdf.get();
                 System.out.println(rdf.carId+"::"+rdf.driverId+"::"+rdf.end);
+					//-> 2::201::26
+					//-> 1::101::25
+					//-> 1::102::22
             }
         }
 
@@ -69,13 +75,14 @@ public class GroupingTest {
             }
 
             rdfMinMaxList = rdfMinMaxList.stream()
-                .sorted((rdf1, rdf2) -> {
-                    return rdf1.compareTo(rdf2);
-                })
+                .sorted((rdf1, rdf2) -> rdf1.compareTo(rdf2))
                 .collect(toList());
 
             for (Rdf rdf : rdfMinMaxList) {
                 System.out.println(rdf.carId+"::"+rdf.driverId+"::"+rdf.begin+"::"+rdf.end);
+					//-> 1::101::11::25
+					//-> 1::102::13::22
+					//-> 2::201::12::26
             }
         }
 
@@ -104,6 +111,9 @@ public class GroupingTest {
 
             for (Rdf rdf : rdfMinMaxList) {
                 System.out.println(rdf.carId+"::"+rdf.driverId+"::"+rdf.begin+"::"+rdf.end);
+					//-> 1::101::11::25
+					//-> 1::102::13::22
+					//-> 2::201::12::26
             }
         }
     }

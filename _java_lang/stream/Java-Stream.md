@@ -306,7 +306,7 @@ List<String> lowCaloricDishesName =
       ))
       ```
 
-## Collector<T,A,R> 인터페이스
+## `Collector<T,A,R>` 인터페이스
 
 ```
 List<Dish> dishes = menu.stream().collect(
@@ -316,7 +316,7 @@ List<Dish> dishes = menu.stream().collect(
 ) // Collector<T, List<T>, List<T>>
 ```
 
-## Optional<V>
+## `Optional<V>`
 
 - 팩토리
   - `Optional.empty() : Optional<T>`
