@@ -37,6 +37,7 @@ List<String> lowCaloricDishesName =
 ## 생성
 
 - - `list.stream() : Stream<T>`
+  - `set.stream() : Stream<T>`
   - `Arrays.stream(T[]) : Stream<T>`
 
 - - `Stream.of(T...) : Stream<T>`
@@ -81,6 +82,8 @@ List<String> lowCaloricDishesName =
 - `.map(mapper : Function<T,R>) : Stream<R>`
   - `.map(Item::getX)`
 - `.flatMap(mapper : Function<T,Stream<R>>) : Stream<R>`
+  - `.flatMap(l -> l.stream())`
+  - `.flatMap(Collection::stream)`
   - `.flatMap(Arrays::stream)`
 
 - `.distinct() : Stream<T>`
@@ -94,6 +97,7 @@ List<String> lowCaloricDishesName =
 
 - `.collect(Collector<T,A,R>) : R`
   - `.collect(toList())`
+  - `.collect(toSet())`
   - `.collect(groupingBy(Item::getX))`
 - `.forEach(Consumer<T>) : void`
   - `.forEach(System.out::println)`
@@ -217,7 +221,7 @@ List<String> lowCaloricDishesName =
       ```
     - ```
       .collect(groupingBy(Item::getX,
-          flatMapping(item -> item->getY().stream(), toSet())
+          flatMapping(item -> item.getY().stream(), toSet())
       ))
       ```
     - ```
