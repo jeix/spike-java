@@ -149,17 +149,19 @@ List<String> lowCaloricDishesName =
 
 ## collect
 
-- `.collect(Collector<T,A,R>) : R`
+### `.collect(Collector<T,A,R>) : R`
+
+- 
   - `.collect(counting()) : long`
   - `.collect(maxBy(comparingInt(Item::getX))) : Optional<T>`
-  
+- 
   - `.collect(summingInt(Item::getX)) : int`
   - `.collect(averagingInt(Item::getX)) : double`
   - `.collect(summarizingInt(Item::getX)) : IntSummaryStatistics`
-  
+- 
   - `.collect(joining()) : String`
   - `.collect(joining(", ")) : String`
-  
+- 
   - `.collect(reducing(0, Item::getX, (a, b) -> a + b)) : int`
   - `.collect(reducing(0, Item::getX, Integer::sum)) : int`
 
@@ -173,21 +175,37 @@ List<String> lowCaloricDishesName =
   .mapToInt(Item::getX).sum()
   ```
 
-- `Collectors`
+### `Collectors`
+
+- 
+  - `toList() :  Collector<T,?,List<T>>`
+  - `toSet() :  Collector<T,?,Set<T>>`
+  - `toMap(keyMapper : Function<T,K>, valueMapper : Function<T,U>) : Collector<T,?,Map<K,U>>`
+- 
   - `counting() : Collector<T,?,Long>`
   - `maxBy(Comparator<T>) : Collector<T,?,Optional<T>>`
-  
+- 
   - `summingInt(mapper : ToIntFunction<T>) : Collector<T,?,Integer>`
   - `averagingInt(mapper : ToIntFunction<T>) : Collector<T,?,Double>`
   - `summarizingInt(mapper : ToIntFunction<T>) : Collector<T,?,IntSummaryStatistics>`
-  
+- 
   - `joining() : Collector<CharSequence,?,String>`
   - `joining(delimiter : CharSequence) : Collector<CharSequence,?,String>`
-  
+- 
   - `reducing(identity : U, mapper : Function<T,U>, op : BinaryOperator<U>) : Collector<T,?,U>`
   - `reducing(op : BinaryOperator<T>) : Collector<T,?,Optional<T>>`
+- 
+  - `filtering(Predicate<T>, downstream : Collector<T,A,R>) : Collector<T,?,R>`
+  - `mapping(mapper : Function<T,U>, downstream : Collector<U,A,R>) : Collector<T,?,R>`
+  - `flatMapping(mapper : Function<T,Stream<U>>, downstream : Collector<U,A,R>) : Collector<T,?,R>`
+  - `groupingBy(classifier : Function<T,K>) : Collector<T, ?, Map<K,List<T>>>`
+- 
+  - `collectingAndThen(downstream : Collector<T,A,R>, finisher : Function<R,RR>) : Collector<T,A,RR>`
+  - `toCollection(collectionFactory : Supplier<C>) : Collector<T,?,C>`
 
-- `Comparator<T>`
+### `Comparator<T>`
+
+- 
   - `comparing(keyExtractor : Function<T,U>) : Comparator<T>`
   - `comparingInt(keyExtractor : ToIntFunction<T>) : Comparator<T>`
     - `.comparingInt(Item::getX) : Comparator<T>`
@@ -266,18 +284,6 @@ List<String> lowCaloricDishesName =
           )
       ))
       ```
-
-- `Collectors`
-  - `filtering(Predicate<T>, downstream : Collector<T,A,R>) : Collector<T,?,R>`
-  - `mapping(mapper : Function<T,U>, downstream : Collector<U,A,R>) : Collector<T,?,R>`
-  - `flatMapping(mapper : Function<T,Stream<U>>, downstream : Collector<U,A,R>) : Collector<T,?,R>`
-  - `groupingBy(classifier : Function<T,K>) : Collector<T, ?, Map<K,List<T>>>`
-  - `counting() : Collector<T,?,Long>`
-  - `maxBy(Comparator<T>) : Collector<T,?,Optional<T>>`
-  - `collectingAndThen(downstream : Collector<T,A,R>, finisher : Function<R,RR>) : Collector<T,A,RR>`
-  - `summingInt(mapper : ToIntFunction<T>) : Collector<T,?,Integer>`
-  - `toCollection(collectionFactory : Supplier<C>) : Collector<T,?,C>`
-  - `reducing(op : BinaryOperator<T>) : Collector<T,?,Optional<T>>`
 
 ### 분할
 
