@@ -174,7 +174,7 @@ public class CollectTest {
                         )
                 );
         System.out.printf("%s\n", set);
-            //-> [Bar, Quxi, Qux, Foo, Bark, Quxa, Bard, Food, Foot]
+            //-> [Food, Quxi, Foo, Bar, Bard, Quxa, Foot, Qux, Bark]
 
         //////////////////////////////
 
