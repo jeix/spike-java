@@ -98,6 +98,7 @@ List<String> lowCaloricDishesName =
 - `.collect(Collector<T,A,R>) : R`
   - `.collect(toList())`
   - `.collect(toSet())`
+  - `.collect(toMap(Item::getX, Item::getY))`
   - `.collect(groupingBy(Item::getX))`
 - `.forEach(Consumer<T>) : void`
   - `.forEach(System.out::println)`
