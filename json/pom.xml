@@ -12,14 +12,18 @@
 	-->
 	<groupId>org.simplenet</groupId>
 	<artifactId>jsontest</artifactId>
-	<version>0.0.1-SNAPSHOT</version><!--
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Gson Examples</name>
+	<description>JSON serialization and deserialization examples using Gson</description><!--
 	<name>Chapter05</name>
 	<description>Demo project for Spring Boot</description>-->
 
-	<properties><!--
+	<properties>
 		<java.version>21</java.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
+		<exec.mainClass>org.simple.jsontest.Try</exec.mainClass>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!--
 		<maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>-->
-		<maven.compiler.release>21</maven.compiler.release>
 	</properties>
 
 	<dependencies><!--
@@ -80,6 +84,32 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.16.0</version>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.11.0</version>
+				<executions>
+					<execution>
+						<id>copy-runtime-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeScope>runtime</includeScope>
+							<outputDirectory>${project.build.directory}/dependency</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.6.3</version>
+				<configuration>
+					<mainClass>${exec.mainClass}</mainClass>
+				</configuration>
+			</plugin>
 			<!--
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -102,18 +132,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			--><!--
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.6.3</version>
-				<configuration>
-					<mainClass>org.simple.jsontest.Try</mainClass>
-					<arguments>
-						<argument>foo</argument>
-					</arguments>
-				</configuration>
-			</plugin>-->
+			-->
 		</plugins>
 	</build>
 

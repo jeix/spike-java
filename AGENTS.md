@@ -9,16 +9,16 @@ This repository is a collection of small Java experiments rather than one applic
 Run Maven commands against the module being changed:
 
 - `cd mvn && ./_build.sh` builds the general Java examples with Maven Wrapper.
-- `mvn -f json/pom.xml clean package` resolves Gson and packages the JSON examples.
+- `cd json && ./_build.sh` resolves Gson and packages the JSON examples.
 - `cd zip && ./mvnw clean package` builds the archive utilities with the pinned Maven version.
 - `cd mvn && ./mvnw exec:java` runs the configured `Try` entry point through Maven.
-- `mvn -f json/pom.xml exec:java -Dexec.mainClass=org.simple.jsontest.Try` runs a selected JSON example.
+- `cd json && ./_run.sh org.simple.jsontest.Try` runs a compiled JSON example directly with Java.
 
-See `mvn/README.md`, `json/x-how-to.txt`, and `zip/README.md` for module-specific commands.
+See `mvn/README.md`, `json/README.md`, and `zip/README.md` for module-specific commands.
 
 ## Coding Style & Naming Conventions
 
-Use the Java release declared by each Maven module: `mvn/` and `zip/` target Java 21, while `json/` targets Java 8. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `org/simple/jsontest`). No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
+All three Maven modules (`mvn/`, `json/`, and `zip/`) target Java 21. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `org/simple/jsontest`). No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
 
 ## Testing Guidelines
 
