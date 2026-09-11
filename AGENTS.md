@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a collection of small Java experiments rather than one application. Standalone examples live under `_java_lang/` and `_java_util/`; keep related notes beside them, such as `_java_util/stream/Java-Stream.md`. The `mvn/`, `json/`, `lombok/`, and `zip/` directories are independent Maven projects with their own `pom.xml` and `src/main/java` trees. `json/` demonstrates Gson, `lombok/` demonstrates annotation-generated code, and `zip/` contains ZIP and filesystem examples. Do not treat the repository root as a Maven reactor. Generated `out/`, `target/`, `.class`, IDE, and build files must remain untracked.
+This repository is a collection of small Java experiments rather than one application. Standalone examples live under `_java_lang/` and `_java_util/`; keep related notes beside them, such as `_java_util/stream/Java-Stream.md`. The `_java_lang/field-override/`, `mvn/`, `json/`, `lombok/`, and `zip/` directories are independent Maven projects with their own `pom.xml` and `src/main/java` trees. `json/` demonstrates Gson, `lombok/` demonstrates annotation-generated code, and `zip/` contains ZIP and filesystem examples. Do not treat the repository root as a Maven reactor. Generated `out/`, `target/`, `.class`, IDE, and build files must remain untracked.
 
 ## Build, Test, and Development Commands
 
@@ -11,15 +11,16 @@ Run Maven commands against the module being changed:
 - `cd mvn && ./_build.sh` builds the general Java examples with Maven Wrapper.
 - `cd json && ./_build.sh` resolves Gson and packages the JSON examples.
 - `cd lombok && ./_build.sh` compiles the Lombok examples and packages the module.
+- `cd _java_lang/field-override && ./_build.sh` builds the field-hiding experiment.
 - `cd zip && ./mvnw clean package` builds the archive utilities with the pinned Maven version.
 - `cd mvn && ./mvnw exec:java` runs the configured `Try` entry point through Maven.
 - `cd json && ./_run.sh s.jsontest.Try` runs a compiled JSON example directly with Java.
 
-See `mvn/README.md`, `json/README.md`, `lombok/README.md`, and `zip/README.md` for module-specific commands.
+See `_java_lang/field-override/README.md`, `mvn/README.md`, `json/README.md`, `lombok/README.md`, and `zip/README.md` for module-specific commands.
 
 ## Coding Style & Naming Conventions
 
-All Maven modules target Java 21. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `s/jsontest`); the default-package Lombok examples remain directly under `lombok/src/main/java`. No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
+All Maven modules target Java 21. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `s/jsontest`); default-package examples remain directly under their module's `src/main/java`. No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
 
 ## Testing Guidelines
 
