@@ -12,7 +12,7 @@ public class MkDir {
 		
 		String mode = args[0];
 		String end = args[1];
-		File dir = new File("/mnt/d/zzz", end);
+		File dir = new File(".", end);
 		if ("m".equals(mode)) {
 			if (! dir.exists()) {
 				dir.mkdir();

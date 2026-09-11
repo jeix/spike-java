@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a collection of small Java 8 experiments rather than one application. Standalone examples live under `_java_lang/` and `_java_util/`; keep related notes beside them, such as `_java_lang/stream/Java-Stream.md`. The `mvn/`, `json/`, and `zip/` directories are independent Maven projects with their own `pom.xml` and `src/main/java` trees. `json/` demonstrates Gson, while `zip/` contains ZIP and filesystem examples. Do not treat the repository root as a Maven reactor. Generated `target/`, `.class`, IDE, and build files must remain untracked.
+This repository is a collection of small Java experiments rather than one application. Standalone examples live under `_java_lang/` and `_java_util/`; keep related notes beside them, such as `_java_lang/stream/Java-Stream.md`. The `mvn/`, `json/`, and `zip/` directories are independent Maven projects with their own `pom.xml` and `src/main/java` trees. `json/` demonstrates Gson, while `zip/` contains ZIP and filesystem examples. Do not treat the repository root as a Maven reactor. Generated `target/`, `.class`, IDE, and build files must remain untracked.
 
 ## Build, Test, and Development Commands
 
@@ -10,15 +10,15 @@ Run Maven commands against the module being changed:
 
 - `mvn -f mvn/pom.xml clean compile` compiles the general Java examples.
 - `mvn -f json/pom.xml clean package` resolves Gson and packages the JSON examples.
-- `mvn -f zip/pom.xml clean package` builds the archive utilities.
+- `cd zip && ./mvnw clean package` builds the archive utilities with the pinned Maven version.
 - `mvn -f mvn/pom.xml exec:java` runs the configured `Try` entry point.
 - `mvn -f json/pom.xml exec:java -Dexec.mainClass=org.simple.jsontest.Try` runs a selected JSON example.
 
-See `json/x-how-to.txt` and `zip/x-how-to.txt` for direct `javac` and `java` alternatives.
+See `json/x-how-to.txt` and `zip/README.md` for direct `javac` and `java` alternatives.
 
 ## Coding Style & Naming Conventions
 
-Target Java 8, as declared by each Maven module. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `org/simple/jsontest`). No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
+Use the Java release declared by each Maven module: `zip/` targets Java 21, while `mvn/` and `json/` target Java 8. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `org/simple/jsontest`). No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
 
 ## Testing Guidelines
 
