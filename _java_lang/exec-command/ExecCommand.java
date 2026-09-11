@@ -28,7 +28,7 @@ public class ExecCommand {
 		boolean isLinux = System.getProperty("os.name").toLowerCase().startsWith("linux");
 		boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
 		String homeDirectory = System.getProperty("user.home");
-		String commandDirectory = homeDirectory + "/ws/java/exec-command/command";
+		String commandDirectory = homeDirectory + "/spike-java/_java_lang/exec-command/command";
 
 		if ("1".equals(mode)) {
 			System.out.println("====================");

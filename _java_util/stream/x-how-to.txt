@@ -1,0 +1,14 @@
+
+```sh
+javac -d out *.java
+```
+
+```sh
+
+java -cp out CollectTest
+
+java -cp out FlatteningTest
+
+java -cp out GroupingTest
+
+```

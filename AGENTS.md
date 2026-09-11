@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a collection of small Java experiments rather than one application. Standalone examples live under `_java_lang/` and `_java_util/`; keep related notes beside them, such as `_java_lang/stream/Java-Stream.md`. The `mvn/`, `json/`, `lombok/`, and `zip/` directories are independent Maven projects with their own `pom.xml` and `src/main/java` trees. `json/` demonstrates Gson, `lombok/` demonstrates annotation-generated code, and `zip/` contains ZIP and filesystem examples. Do not treat the repository root as a Maven reactor. Generated `target/`, `.class`, IDE, and build files must remain untracked.
+This repository is a collection of small Java experiments rather than one application. Standalone examples live under `_java_lang/` and `_java_util/`; keep related notes beside them, such as `_java_util/stream/Java-Stream.md`. The `mvn/`, `json/`, `lombok/`, and `zip/` directories are independent Maven projects with their own `pom.xml` and `src/main/java` trees. `json/` demonstrates Gson, `lombok/` demonstrates annotation-generated code, and `zip/` contains ZIP and filesystem examples. Do not treat the repository root as a Maven reactor. Generated `out/`, `target/`, `.class`, IDE, and build files must remain untracked.
 
 ## Build, Test, and Development Commands
 

@@ -1,0 +1,24 @@
+
+```sh
+javac -d out ExecCommand.java
+```
+
+```sh
+java -cp out ExecCommand
+
+java -cp out ExecCommand 1
+
+    --> 안 끝남
+
+java -cp out ExecCommand 2
+
+    --> 안 끝남
+
+java -cp out ExecCommand 3
+
+java -cp out ExecCommand 4
+
+java -cp out ExecCommand 5
+
+    --> S3 키와 버킷이 없어서 실행하지 않음
+```

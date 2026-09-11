@@ -1,0 +1,8 @@
+
+```sh
+javac -d out *.java
+```
+
+```sh
+java -cp out ArraysAsList
+```

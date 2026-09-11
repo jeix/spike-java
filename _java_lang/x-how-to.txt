@@ -1,0 +1,24 @@
+
+```sh
+javac -d out *.java
+```
+
+```sh
+
+java -cp out Base64Test
+
+java -cp out CloneTest
+
+java -cp out DeprettyJson
+
+java -cp out LocalDateTimeTest
+
+java -cp out SerializeTest
+
+java -cp out SubTypeTest1
+
+java -cp out SubTypeTest2
+
+java -cp out Try
+
+```
