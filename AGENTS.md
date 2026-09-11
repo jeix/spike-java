@@ -13,13 +13,13 @@ Run Maven commands against the module being changed:
 - `cd lombok && ./_build.sh` compiles the Lombok examples and packages the module.
 - `cd zip && ./mvnw clean package` builds the archive utilities with the pinned Maven version.
 - `cd mvn && ./mvnw exec:java` runs the configured `Try` entry point through Maven.
-- `cd json && ./_run.sh org.simple.jsontest.Try` runs a compiled JSON example directly with Java.
+- `cd json && ./_run.sh s.jsontest.Try` runs a compiled JSON example directly with Java.
 
 See `mvn/README.md`, `json/README.md`, `lombok/README.md`, and `zip/README.md` for module-specific commands.
 
 ## Coding Style & Naming Conventions
 
-All Maven modules target Java 21. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `org/simple/jsontest`); the default-package Lombok examples remain directly under `lombok/src/main/java`. No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
+All Maven modules target Java 21. Use four-space indentation for new Java code, one public top-level class per file, `PascalCase` class names, `camelCase` methods and variables, and `UPPER_SNAKE_CASE` constants. Keep package paths aligned with declarations (for example, `s/jsontest`); the default-package Lombok examples remain directly under `lombok/src/main/java`. No formatter or linter is configured, so preserve surrounding style and keep imports explicit and organized.
 
 ## Testing Guidelines
 

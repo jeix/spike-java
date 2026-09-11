@@ -1,4 +1,4 @@
-package org.simple.jsontest;
+package s.jsontest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

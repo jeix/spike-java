@@ -28,19 +28,19 @@ Windows에서는 `mvnw.cmd clean package`를 사용해요.
 Java 프로그램에 그대로 전달해요.
 
 ```sh
-./_run.sh org.simple.jsontest.Try
-./_run.sh org.simple.jsontest.Try2
+./_run.sh s.jsontest.Try
+./_run.sh s.jsontest.Try2
 ```
 
 인수 없이 실행하면 사용법을 출력해요.
 
 ## Maven으로 실행
 
-Exec Maven Plugin의 기본 실행 클래스는 `org.simple.jsontest.Try`예요.
+Exec Maven Plugin의 기본 실행 클래스는 `s.jsontest.Try`예요.
 
 ```sh
 ./mvnw exec:java
-./mvnw exec:java -Dexec.mainClass=org.simple.jsontest.Try2
+./mvnw exec:java -Dexec.mainClass=s.jsontest.Try2
 ```
 
 일반 실행에는 Maven을 거치지 않는 `_run.sh`를 사용해요.

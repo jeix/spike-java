@@ -21,7 +21,7 @@
 	<properties>
 		<java.version>21</java.version>
 		<maven.compiler.release>${java.version}</maven.compiler.release>
-		<exec.mainClass>org.simple.jsontest.Try</exec.mainClass>
+		<exec.mainClass>s.jsontest.Try</exec.mainClass>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!--
 		<maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>-->
 	</properties>
