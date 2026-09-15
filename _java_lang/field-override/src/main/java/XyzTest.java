@@ -45,7 +45,7 @@ public class XyzTest {
             protected String bar = "X_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
             }
         }
         private static class YWorker extends AbcWorker {
@@ -53,7 +53,7 @@ public class XyzTest {
             protected String bar = "Y_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
             }
         }
     }
@@ -82,7 +82,7 @@ public class XyzTest {
             protected String bar = "X_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
             }
         }
         @Getter
@@ -92,7 +92,7 @@ public class XyzTest {
             protected String bar = "Y_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
             }
         }
     }
@@ -126,7 +126,7 @@ public class XyzTest {
             protected String bar = "X_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
                 super.foo = this.foo;
                 super.bar = this.bar;
                 try {
@@ -141,7 +141,7 @@ public class XyzTest {
             protected String bar = "Y_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
                 super.foo = this.foo;
                 super.bar = this.bar;
                 try {
@@ -175,7 +175,7 @@ public class XyzTest {
             }
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
             }
         }
         private static class YWorker extends AbcWorker {
@@ -185,7 +185,7 @@ public class XyzTest {
             }
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
             }
         }
     }
@@ -219,9 +219,11 @@ public class XyzTest {
             protected String bar = "X_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
-                super.foo = "%s-%s".formatted(this.toString().split("\\$")[2], this.foo);
-                super.bar = "%s-%s".formatted(this.toString().split("\\$")[2], this.bar);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
+                //super.foo = "%s-%s".formatted(this.toString().split("\\$")[2], this.foo);
+                //super.bar = "%s-%s".formatted(this.toString().split("\\$")[2], this.bar);
+                super.foo = this.foo;
+                super.bar = this.bar;
                 try {
                     Thread.sleep((long) (Math.random() * 1000));
                 } catch (InterruptedException e) {
@@ -234,7 +236,7 @@ public class XyzTest {
             protected String bar = "Y_Bar";
             @Override
             protected void walk() {
-                log.info("{} walk with {}", this.toString(), this.foo);
+                log.info("{} walk with {} {}", this.toString(), this.foo, this.bar);
                 super.foo = this.foo;
                 super.bar = this.bar;
                 try {

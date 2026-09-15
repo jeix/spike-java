@@ -1,0 +1,66 @@
+
+```sh
+./_build.sh
+```
+
+```sh
+./_run.sh XyzTest
+
+[main] INFO XyzTest - --------------------
+[main] INFO XyzTest - XyzTest$P1$XWorker@27973e9b Abc_Foo Abc_Bar
+[main] INFO XyzTest - XyzTest$P1$XWorker@27973e9b walk with X_Foo X_Bar
+[main] INFO XyzTest - XyzTest$P1$YWorker@506e1b77 Abc_Foo Abc_Bar
+[main] INFO XyzTest - XyzTest$P1$YWorker@506e1b77 walk with Y_Foo Y_Bar
+[main] INFO XyzTest - --------------------
+[main] INFO XyzTest - XyzTest$P1R1$XWorker@1ddc4ec2 X_Foo X_Bar
+[main] INFO XyzTest - XyzTest$P1R1$XWorker@1ddc4ec2 walk with X_Foo X_Bar
+[main] INFO XyzTest - XyzTest$P1R1$YWorker@b1bc7ed Y_Foo Y_Bar
+[main] INFO XyzTest - XyzTest$P1R1$YWorker@b1bc7ed walk with Y_Foo Y_Bar
+[main] INFO XyzTest - --------------------
+[main] INFO XyzTest - XyzTest$P1R3$XWorker@4edde6e5 X_Foo X_Bar
+[main] INFO XyzTest - XyzTest$P1R3$XWorker@4edde6e5 walk with X_Foo X_Bar
+[main] INFO XyzTest - XyzTest$P1R3$YWorker@1e80bfe8 Y_Foo Y_Bar
+[main] INFO XyzTest - XyzTest$P1R3$YWorker@1e80bfe8 walk with Y_Foo Y_Bar
+[main] INFO XyzTest - --------------------
+[] INFO XyzTest - XyzTest$P1R2$XWorker@7d6bbf16 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R2$XWorker@7d6bbf16 walk with X_Foo X_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@69d0c54e 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@69d0c54e walk with Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@69d0c54e 2 Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R2$XWorker@7d6bbf16 2 X_Foo X_Bar
+
+(OR)
+
+[] INFO XyzTest - XyzTest$P1R2$XWorker@77684b29 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@7c7b3564 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R2$XWorker@77684b29 walk with X_Foo X_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@7c7b3564 walk with Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@7c7b3564 2 Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R2$XWorker@77684b29 2 X_Foo X_Bar
+
+(OR)
+
+[] INFO XyzTest - XyzTest$P1R2$XWorker@7d6bbf16 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@69d0c54e 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@69d0c54e walk with Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R2$XWorker@7d6bbf16 walk with X_Foo X_Bar
+[] INFO XyzTest - XyzTest$P1R2$YWorker@69d0c54e 2 Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R2$XWorker@7d6bbf16 2 X_Foo X_Bar
+[main] INFO XyzTest - --------------------
+[] INFO XyzTest - XyzTest$P1R4$XWorker@31041dfa 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R4$XWorker@31041dfa walk with X_Foo X_Bar
+[] INFO XyzTest - XyzTest$P1R4$YWorker@73fe945e 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R4$YWorker@73fe945e walk with Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R4$YWorker@73fe945e 2 Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R4$XWorker@31041dfa 2 X_Foo X_Bar
+
+(OR)
+
+[] INFO XyzTest - XyzTest$P1R4$XWorker@148136c9 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R4$XWorker@148136c9 walk with X_Foo X_Bar
+[] INFO XyzTest - XyzTest$P1R4$YWorker@44a6976d 1 Abc_Foo Abc_Bar
+[] INFO XyzTest - XyzTest$P1R4$YWorker@44a6976d walk with Y_Foo Y_Bar
+[] INFO XyzTest - XyzTest$P1R4$XWorker@148136c9 2 X_Foo X_Bar
+[] INFO XyzTest - XyzTest$P1R4$YWorker@44a6976d 2 Y_Foo Y_Bar
+[main] INFO XyzTest - --------------------
+```
